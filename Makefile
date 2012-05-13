@@ -8,36 +8,63 @@ DESTDIR  ?= simutrans
 PAKDIR   ?= $(DESTDIR)/pak128.Britain
 DESTFILE ?= simupak128.Britain
 
+# Dirs for simutranslator
+TR_DIRS :=
+
 OUTSIDE :=
 OUTSIDE += grounds
+TR_DIRS += grounds
 
 DIRS64 :=
 DIRS64 += gui/gui64
+TR_DIRS += gui
 
 DIRS128 :=
 DIRS128 += air
+TR_DIRS += air
 DIRS128 += attractions
+TR_DIRS += attractions
 DIRS128 += boats
+TR_DIRS += boats
 DIRS128 += bus
+TR_DIRS += bus
 DIRS128 += citybuildings
+TR_DIRS += citybuildings
 DIRS128 += citycars
+TR_DIRS += citycars
 DIRS128 += depots
+TR_DIRS += depots
 DIRS128 += goods
+TR_DIRS += goods
 DIRS128 += gui/gui128
 DIRS128 += hq
+TR_DIRS += hq
 DIRS128 += industry
+TR_DIRS += industry
 DIRS128 += livery-trains
+TR_DIRS += livery-trains
 DIRS128 += london-underground
+TR_DIRS += london-underground
 DIRS128 += maglev
+TR_DIRS += maglev
 DIRS128 += narrowgauge
+TR_DIRS += narrowgauge
 DIRS128 += pedestrians
+TR_DIRS += pedestrians
 DIRS128 += smokes
+TR_DIRS += smokes
 DIRS128 += stations
+TR_DIRS += stations
 DIRS128 += townhall
+TR_DIRS += townhall
 DIRS128 += trains
+TR_DIRS += trains
 DIRS128 += trams
+TR_DIRS += trams
 DIRS128 += trees
+TR_DIRS += trees
 DIRS128 += ways
+TR_DIRS += ways
 
 DIRS192 := 
 DIRS192 += boats/boats192
@@ -51,7 +78,7 @@ DIRS224 += boats/boats224
 DIRS := $(OUTSIDE) $(DIRS64) $(DIRS128) $(DIRS192) $(DIRS224)
 
 
-.PHONY: $(DIRS) copy tar zip
+.PHONY: $(DIRS) copy tar zip simutranslator
 
 all: copy $(DIRS)
 
@@ -111,3 +138,9 @@ $(OUTSIDE):
 clean:
 	@echo "===> CLEAN"
 	@rm -fr $(PAKDIR) $(DESTFILE).tbz2 $(DESTFILE).zip
+
+# Note, this is a really sloppy way to do this.
+# Also note, there are too many trains for a single zip file.
+simutranslator:
+	for x in $(TR_DIRS); do zip -r simutranslator/"$$x".zip "$$x"; done
+	zip simutranslator/program_texts.zip simutranslator/*.dat
