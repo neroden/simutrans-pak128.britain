@@ -500,6 +500,88 @@ RES_KG_1990_01_02
 Detatched House
 RES_KG_1990_02_03
 Semi-detatched Houses
+RES_JH_1750_01_01
+Hovels
+RES_JH_1750_02_01
+Hovels
+RES_JH_1800_00_06A
+Georgian Terrace Town Houses
+RES_JH_1800_00_06B
+Georgian Terrace Town Houses
+RES_JH_1945_00_01A
+Prefabs
+RES_JH_1945_00_01B
+Prefabs
+RES_JH_1890_01_02
+Town House
+RES_KG_1930_00_02B
+Detatched House
+RES_JH_1890_02_03A
+Detatched House
+RES_JH_1890_02_03B
+Detatched House
+RES_A_1850_00_4
+Town House
+RES_A_1890_02_04
+Corner Terrace
+RES_JH_1930_00_04
+Suburban Semi-detatched Houses
+RES_JH_1930_00_04B
+Suburban Semi-detatched Houses
+RES_JH_1890_00_06A
+Semi-detatched Town Houses
+RES_JH_1890_00_06B
+Semi-detatched Town Houses
+RES_JH_1870_00_06A
+Terraced Houses
+RES_JH_1870_00_06B
+Terraced Houses
+RES_JH_1930_01_06
+Flats
+COM_JH_1930_00_06A
+Parade of Shops
+COM_JH_1930_00_06B
+Parade of Shops
+RES_JH_1930_02_08
+Flats
+COM_JH_1930_00_08B
+Parade of Shops
+COM_JH_1930_01_08A
+Parade of Shops
+RES_JH_1930_03_10
+Flats
+COM_JH_1930_02_10
+Offices
+COM_JH_1930_01_12A
+Offices
+COM_JH_1930_01_12B
+Offices
+IND_JH_1750_06_01
+Cow Field
+IND_JH_1750_07_01
+Sheep Field
+IND_JH_1750_04_02
+Smithy
+IND_JH_1750_05_02
+Carpenter's Workshop
+IND_JH_1920_00_02
+Storage Tanks
+IND_JH_1920_01_02
+Storage Tank
+IND_JH_1920_02_02
+Storage Tanks
+IND_JH_1750_08_03
+Cooper's Workshop
+IND_JH_1930_01_04
+Telephone Exchange
+IND_JH_1930_00_05
+Warehouses
+IND_JH_1800_00_06
+Water Pumping Station
+IND_JH_1850_04_06
+Water Pumping Station
+IND_JH_1850_03_08
+Timber Yard
 Small_Football_Ground
 Small Football Ground
 Small_Rugby_Ground
@@ -568,6 +650,16 @@ Cemetry
 Cemetry
 CityWall
 City Walls
+Small_Cricket_Ground
+Cricket Ground
+Large_Football_Ground
+Football Ground
+LT_Station1_pc_1standard
+Tube station (basic)
+LT_Station1_pc_2overpass
+Tube station (with overpass)
+LT_Station1_pc_3levelpass
+Tube station (with passageway)
 #____________________________________citycar____________________________________
 #____________________________________citycar____________________________________
 AustinMetro(Blue)
@@ -1324,6 +1416,8 @@ RoadTunnelConcrete
 Concrete tunnel
 RoadTunnelStone
 Stone faced tunnel
+LT_Tunnel
+Tube tunnel
 #____________________________________vehicle____________________________________
 #____________________________________vehicle____________________________________
 1-Deck-Closed
@@ -3368,7 +3462,178 @@ WrightStreetcar(Rear)
 Wright Streetcar (rear)
 YorkshireSteamTank
 Yorkshire Steam Tank (bulk fluids)
-#______________________________________way______________________________________
+LNWR-8wheel-radial-brake-front
+LNWR 8 wheel (radial) compartment carriage (brake)
+LNWR-8wheel-radial-lav
+LNWR 8 wheel (radial) compartment carriage (lavatory)
+LNWR-8wheel-radial-brake-rear
+LNWR 8 wheel (radial) compartment carriage (brake)
+LNWR-8wheel-radial-mail
+LNWR 8 wheel (radial) mail carriage
+LNWR-8wheel-radial-tpo
+LNWR 8 wheel (radial) TPO
+LBSCR-0-4-2T
+LBSCR Craven 0-4-2T
+Metropolitan-A-Class
+A Class 4-4-0T
+BR-Class485(Blue)Front
+BR Class 485 EMU
+BR-Class485(Blue)Middle1
+BR Class 485 EMU (trailer)
+BR-Class485(Blue)Middle2
+BR Class 485 EMU (trailer)
+BR-Class485(Blue)Rear
+BR Class 485 EMU (rear DM)
+1903TubeStockFront
+CLR 1903 Tube Stock
+1900TubeStockTrailer
+CLR 1900 Tube Stock (trailer)
+1903TubeStockRear
+CLR 1903 Tube Stock (rear DM)
+1900TubeLoco
+CLR 1900 Tube Locomotive
+1890TubeStockLoco
+CSLR 1890 Tube Locomotive
+1890TubeStockTrailer
+CSLR 1890 "Padded Cell" Tube Stock
+1906TubeStockFront
+UERL 1906 Tube Stock
+1906TubeStockTrailer
+UERL 1906 Tube Stock (trailer)
+1906TubeStockRear
+UERL 1906 Tube Stock (rear DM)
+1920TubeStockAirDoorFront
+UERL 1920 "Air Door" Tube Stock
+1920TubeStockAirDoorTrailer
+UERL 1920 "Air Door" Tube Stock (trailer)
+1920TubeStockAirDoorRear
+UERL 1920 "Air Door" Tube Stock (rear DM)
+1914TubeStockFront
+UERL 1914 Tube Stock
+1914TubeStockRear
+UERL 1914 Tube Stock (rear DM)
+1915TubeStockFront
+CLR 1915 Tube Stock
+1915TubeStockRear
+CLR 1915 Tube Stock (rear DM)
+1940TubeStockFront
+WCR 1940 Tube Stock
+1940TubeStockMiddle
+WCR 1940 Tube Stock (trailer)
+1940TubeStockRear
+WCR 1940 Tube Stock (rear DM)
+BR-Class483(NSE)Front
+BR Class 483 EMU
+BR-Class483(NSE)NDM
+BR Class 483 EMU (NDM)
+BR-Class483(NSE)Trailer
+BR Class 483 EMU (trailer)
+BR-Class483(NSE)Rear
+BR Class 483 EMU (rear DM)
+WatfordJointStockFront
+Watford Joint Tube Stock
+WatfordJointStockMiddle
+Watford Joint Tube Stock (trailer)
+WatfordJointStockRear
+Watford Joint Tube Stock (rear DM)
+1923TubeStockFront
+UERL 1923 "Standard" Tube Stock
+1923TubeStockMiddle1
+UERL 1923 "Standard" Tube Stock (trailer)
+1923TubeStockMiddle2
+UERL 1923 "Standard" Tube Stock (trailer)
+1923TubeStockRear
+UERL 1923 "Standard" Tube Stock (rear DM)
+1898TubeStockFront
+WCR 1898 Tube Stock
+1898TubeStockMiddle
+WCR 1898 Tube Stock (trailer)
+1898TubeStockRear
+WCR 1898 Tube Stock (rear DM)
+1938TubeStockFront
+LUL 1938 Tube Stock
+1938TubeStockNDM
+LUL 1938 Tube Stock (NDM)
+1938TubeStockTrailer
+LUL 1938 Tube Stock (trailer)
+1938TubeStockRear
+LUL 1938 Tube Stock (rear DM)
+1959TubeStockFront
+LUL 1959 Tube Stock
+1959TubeStockMiddle1
+LUL 1959 Tube Stock (trailer)
+1959TubeStockMiddle2
+LUL 1959 Tube Stock (trailer)
+1959TubeStockRear
+LUL 1959 Tube Stock (rear DM)
+1967TubeStockFront
+LUL 1967 Tube Stock
+1967TubeStockMiddle1
+LUL 1967 Tube Stock (trailer)
+1967TubeStockMiddle2
+LUL 1967 Tube Stock (trailer)
+1967TubeStockRear
+LUL 1967 Tube Stock (rear DM)
+1973TubeStockFrontDM
+LUL 1973 Tube Stock
+1973TubeStockMiddle1
+LUL 1973 Tube Stock (trailer)
+1973TubeStockMiddle2
+LUL 1973 Tube Stock (trailer)
+1973TubeStockRearDM
+LUL 1973 Tube Stock (rear DM)
+1973TubeStockFrontUNDM
+LUL 1973 Tube Stock (front UNDM)
+1973TubeStockRearUNDM
+LUL 1973 Tube Stock (rear UNDM)
+1983TubeStockFrontDM
+LUL 1983 Tube Stock
+1983TubeStockMiddle1
+LUL 1983 Tube Stock (trailer)
+1983TubeStockMiddle2
+LUL 1983 Tube Stock (trailer)
+1983TubeStockRearDM
+LUL 1983 Tube Stock (rear DM)
+1983TubeStockFrontUNDM
+LUL 1983 Tube Stock (front UNDM)
+1983TubeStockRearUNDM
+LUL 1983 Tube Stock (rear UNDM)
+1995TubeStockFrontDM
+LUL 1995 Tube Stock
+1995TubeStockMiddle1
+LUL 1995 Tube Stock (trailer)
+1995TubeStockMiddle2
+LUL 1995 Tube Stock (trailer)
+1995TubeStockRearDM
+LUL 1995 Tube Stock (rear DM)
+1995TubeStockFrontUNDM
+LUL 1995 Tube Stock (front UNDM)
+1995TubeStockRearUNDM
+LUL 1995 Tube Stock (rear UNDM)
+2009TubeStockFrontDM
+LUL 2009 Tube Stock
+1995TubeStockMiddle1
+LUL 2009 Tube Stock (trailer)
+2009TubeStockMiddle2
+LUL 2009 Tube Stock (trailer)
+2009TubeStockRearDM
+LUL 2009 Tube Stock (rear DM)
+2009TubeStockFrontUNDM
+LUL 2009 Tube Stock (front UNDM)
+2009TubeStockRearUNDM
+LUL 2009 Tube Stock (rear UNDM)
+1992TubeStockFront
+LUL 1992 Tube Stock
+1992TubeStockMiddle1
+LUL 1992 Tube Stock (rear UNDM)
+1992TubeStockMiddle2
+LUL 1992 Tube Stock (front UNDM
+1992TubeStockRear
+LUL 1992 Tube Stock (rear DM)
+STypeSingle
+S-Type Single-Decker
+#______________________________________way______________________
+________________
 #______________________________________way______________________________________
 asphalt_road
 Asphalt Road
@@ -3468,3 +3733,10 @@ TramElectrification
 DC Tramway Catenary
 TrollyBusElectrification
 DC Trolleybus Catenary
+DCFourthRail
+DC Fourth Rail Electrification
+#______________________other_____________________
+#______________________other_____________________
+To attract more tourists\n%s built\na %s\nwith the aid of\n%i tax payers.
+%s built a %s - council leaders expect a rise in passenger numbers.
+
