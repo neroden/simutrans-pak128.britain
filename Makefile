@@ -23,7 +23,7 @@ DIRS128 :=
 DIRS128 += air
 TR_DIRS += air
 DIRS128 += attractions
-TR_DIRS += attractions
+# attractions need special handling for simutranslator
 DIRS128 += boats
 TR_DIRS += boats
 DIRS128 += bus
@@ -137,10 +137,33 @@ $(OUTSIDE):
 
 clean:
 	@echo "===> CLEAN"
-	@rm -fr $(PAKDIR) $(DESTFILE).tbz2 $(DESTFILE).zip
+	@rm -fr $(PAKDIR) $(DESTFILE).tbz2 $(DESTFILE).zip simutranslator/*.zip
 
-# Note, this is a really sloppy way to do this.
-# Also note, there are too many trains for a single zip file.
+
+# Note, this is a really sloppy way to do this;
+# but at least it's automated.
+# Handle attractions specially, see below
+# Also note, there may be too many trains for a single zip file.
 simutranslator:
 	for x in $(TR_DIRS); do zip -r simutranslator/"$$x".zip "$$x"; done
 	zip simutranslator/program_texts.zip simutranslator/*.dat
+
+# The entire attractions folder may be to big to do in one go.
+# So separate out the stone attractions.
+STONE_ATTRACTIONS :=
+STONE_ATTRACTIONS += attractions/stone-attractions.dat
+STONE_ATTRACTIONS += attractions/images/cur/stone-attractions.png 
+STONE_ATTRACTIONS += attractions/images/cur/stone-attractions-snow.png
+
+simutranslator: simutranslator/stone-attractions.zip
+simutranslator/stone-attractions.zip:
+	zip simutranslator/stone-attractions.zip $(STONE_ATTRACTIONS)
+
+# Two of the attractions have too many images for simutranslator
+# to handle.  The images must be left out entirely.
+LARGE_ATTRACTIONS :=
+LARGE_ATTRACTIONS += attractions/images/cur/football-ground-lg.png
+LARGE_ATTRACTIONS += attractions/images/cur/cricket-ground-sm.png
+simutranslator: simutranslator/attractions.zip
+simutranslator/attractions.zip:
+	zip -r simutranslator/attractions.zip attractions -x $(LARGE_ATTRACTIONS) $(STONE_ATTRACTIONS)
