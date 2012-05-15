@@ -25,7 +25,7 @@ TR_DIRS += air
 DIRS128 += attractions
 # attractions need special handling for simutranslator
 DIRS128 += boats
-TR_DIRS += boats
+# boats need special handling too
 DIRS128 += bus
 TR_DIRS += bus
 DIRS128 += citybuildings
@@ -148,7 +148,7 @@ simutranslator:
 	for x in $(TR_DIRS); do zip -r simutranslator/"$$x".zip "$$x"; done
 	zip simutranslator/program_texts.zip simutranslator/*.dat
 
-# The entire attractions folder may be to big to do in one go.
+# The entire attractions folder may be too big to do in one go.
 # So separate out the stone attractions.
 STONE_ATTRACTIONS :=
 STONE_ATTRACTIONS += attractions/stone-attractions.dat
@@ -157,13 +157,31 @@ STONE_ATTRACTIONS += attractions/images/cur/stone-attractions-snow.png
 
 simutranslator: simutranslator/stone-attractions.zip
 simutranslator/stone-attractions.zip:
-	zip simutranslator/stone-attractions.zip $(STONE_ATTRACTIONS)
+	zip $@ $(STONE_ATTRACTIONS)
 
-# Two of the attractions have too many images for simutranslator
+# Two of the attractions have images too big for simutranslator
 # to handle.  The images must be left out entirely.
 LARGE_ATTRACTIONS :=
 LARGE_ATTRACTIONS += attractions/images/cur/football-ground-lg.png
 LARGE_ATTRACTIONS += attractions/images/cur/cricket-ground-sm.png
 simutranslator: simutranslator/attractions.zip
 simutranslator/attractions.zip:
-	zip -r simutranslator/attractions.zip attractions -x $(LARGE_ATTRACTIONS) $(STONE_ATTRACTIONS)
+	zip -r $@ attractions -x $(LARGE_ATTRACTIONS) $(STONE_ATTRACTIONS)
+
+# Simutranslator chokes horribly on the large images for certain large boats.
+# We can upload the dats but not the images for the problem boats.
+# Also, break the boats into two uploads for easier debugging.
+LARGE_BOATS := 
+LARGE_BOATS += boats/boats192/*
+LARGE_BOATS += boats/boats224/*
+PROBLEM_BOATS :=
+PROBLEM_BOATS += boats/images/clan-line-steamer.png
+PROBLEM_BOATS += boats/images/handysize.png
+
+simutranslator: simutranslator/boats-small.zip
+simutranslator/boats-small.zip:
+	zip -r $@ boats -x $(LARGE_BOATS) $(PROBLEM_BOATS)
+	
+simutranslator: simutranslator/boats-large.zip
+simutranslator/boats-large.zip:
+	zip -r $@ boats/boats192 boats/boats224 boats/images -x $(PROBLEM_BOATS)
