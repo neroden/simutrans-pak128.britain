@@ -196,3 +196,14 @@ BrickViaduct225
 ConcreteViaduct
 BrickViaduct320
 ConcreteViaductHS
+#
+### Wlindley new stone attractions
+StoneChurch
+ParishChurchStMichaels
+ParishChurch
+ParishChurchStMichaels
+#
+### Renaming objects to remove spaces
+Ford Trimotor - Northern & Scottish Airways
+FordTrimotor(NSA)
+
