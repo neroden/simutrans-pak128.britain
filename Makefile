@@ -1,7 +1,13 @@
 # Just run
 #   make clean all archives
 # to get fresh and ready to deploy .tbz2 and .zip archives
-
+#
+# Change THIS to change the version string encoded in the pak file
+# The SVN revision will be appended to it
+VERSION_STRING = "pak128.Britain 1.11 112.0 r"
+#
+#
+#
 MAKEOBJ ?= ./makeobj
 
 DESTDIR  ?= simutrans
@@ -129,7 +135,7 @@ $(OUTSIDE):
 	@echo "===> OUTSIDE with REVISION and grounds"
 	@mkdir -p $(PAKDIR)
 	@$(MAKEOBJ) PAK128 $(PAKDIR)/ $@/ > /dev/null
-	@echo -e -n "Obj=ground\nName=Outside\ncopyright=pak128.Britain 1.09 111.0 r" >$@/outsiderev.dat
+	@echo -e -n "Obj=ground\nName=Outside\ncopyright=$(VERSION_STRING)" >$@/outsiderev.dat
 	@svnversion >>$@/outsiderev.dat
 	@echo -e "Image[0][0]=images/ls-water-128.0.0\n-" >>$@/outsiderev.dat
 	@$(MAKEOBJ) PAK128 $(PAKDIR)/ $@/outsiderev.dat > /dev/null
