@@ -81,12 +81,12 @@ ind_near_res = -8
 # . . . . . . .
 # . . . . . . .
 # . . . S . . .
-# . s s n H H H
+# . s s n H H .
 # . . . S . . .
 # . . . . . . .
 # . . . . . . .
 #
-road_1 = ....... ....... ...S... .ssnHHH ...S... ....... .......
+road_1 = ....... ....... ...S... .ssnHH. ...S... ....... .......
 road_1.chance = -4
 
 ## Extending past a diagonal
@@ -205,24 +205,59 @@ road_14.chance = -4
 road_15 = ....... ....... ssssSS. .SSnSS. .SSHsss ....... .......
 road_15.chance = -4
 
+## Heading towards a diagonal (increase odds)
+# . . . . . . .
+# . . . . . . .
+# . . . . . . .
+# . s s n H s s
+# . . . . s s .
+# . . . s s . .
+# . . . . . . .
+#
+road_16 = ....... ....... ....... ..ssnHss ....ss. ...ss.. .......
+road_16.chance = -4
+
+## The "near corner" link
+# . . . . . . .
+# . . . . . . .
+# . . . . . . .
+# . s s n . . .
+# . h h H . . .
+# . . h s . . .
+# . . . s . . .
+#
+road_17 = ....... ....... ....... .ssn... .hhH... ..hs... ...s...
+road_17.chance = -4
+
+
 
 #### H O U S E S ####
 
-### House at a corner
-## Chances are effectively doubled for this one
+### House at a corner... not on a diagonal
 ##
 # . . . . . . .
 # . . . . . . .
 # . . . . . . .
-# . . . n s . .
+# . . . n s S .
 # . . . s s . .
-# . . . . . . .
+# . . . S . . .
 # . . . . . . .
 #
-house_1 = ....... ....... ....... ...ns.. ...ss.. ....... .......
-house_1.chance = -2
-house_2 = ....... ....... ....... ..sn... ..ss... ....... .......
-house_2.chance = -2
+house_1 = ....... ....... ....... ...nsS. ...ss.. ...S... .......
+house_1.chance = -5
+
+### House at a corner... on a diagonal
+##
+# . . . . . . .
+# . . . . . . .
+# . . . . . . .
+# . . . n s s .
+# . . . s s . .
+# . . . s . . .
+# . . . . . . .
+#
+house_3 = ....... ....... ....... ...sss. ...ss.. ...s... .......
+house_3.chance = 0
 
 ### House one tile from the corner
 ##
@@ -292,20 +327,22 @@ house_9 = ....... ....... ..ShS.. ..SnS.. ..SsS.. ..sss.. .......
 house_9.chance = -2
 
 ### House near an end
+###These will have really unpleasant orientations.
+###Reduce chance.
 ##
 # . . . . . . .
 # . . . . . . .
 # . . S S . . .
-# . . S n . . .
+# . . S n S . .
 # . S s h . . .
 # . s s s . . .
 # . . . . . . .
-house_10 = ....... ....... ..SS... ..Sn... .Ssh... .sss... .......
-house_10.chance = 0
-house_11 = ....... ....... ...SS.. ...nS.. ...hsS. ...sss. .......
-house_11.chance = 0
+house_10 = ....... ....... ..SS... ..SnS.. .Ssh... .sss... .......
+house_10.chance = 2
+house_11 = ....... ....... ...SS.. ..SnS.. ...hsS. ...sss. .......
+house_11.chance = 2
 
-## House near a stop
+## House near a stop (increase odds)
 ##
 # . . . . . . .
 # . . . . . . .
@@ -330,19 +367,62 @@ house_13 = ....... ....... ....... ...n... .sts... ....... .......
 house_13.chance = -2
 house_14 = ....... ....... ....... ...n... ...sts. ....... .......
 house_14.chance = -2
+## Fill in between train stations (docks etc) and roads
+##
+# . . . . . . .
+# . . . . . . .
+# . . . t . . .
+# . . . n . . .
+# . . . s . . .
+# . . . . . . .
+# . . . . . . .
+#
+house_15 = ....... ....... ...t... ...n... ...s... ....... .......
+house_15.chance = -2
+## 
 ##
 # . . . . . . .
 # . . . . . . .
 # . . . . . . .
-# . . . n . . .
-# s t s . . . .
+# . . t n . . .
+# . . . s . . .
 # . . . . . . .
 # . . . . . . .
 #
-house_15 = ....... ....... ....... ...n... sts.... ....... .......
-house_15.chance = 0
-house_16 = ....... ....... ....... ...n... ....sts ....... .......
-house_16.chance = 0
+house_16 = ....... ....... ....... ..tn... ...s... ....... .......
+house_16.chance = -2
+house_17 = ....... ....... ....... ...nt.. ...s... ....... .......
+house_17.chance = -2
+## And nearby
+##
+# . . . . . . .
+# . . . . . . .
+# . . t . . . .
+# . . . n . . .
+# . . . s . . .
+# . . . . . . .
+# . . . . . . .
+#
+house_18 = ....... ....... ..t.... ...n... ...s... ....... .......
+house_18.chance = -2
+house_19 = ....... ....... ....t.. ...n... ...s... ....... .......
+house_19.chance = -2
+
+### House at a corner on a pseudo-diagonal
+### This little oddity shows up when merging roads with diagonals
+##
+# . . . . . . .
+# . . . . . . .
+# . . . . . . .
+# . . . n s S .
+# . . . s s . .
+# . . . s . . .
+# . . . . . . .
+house_20 = ....... ....... ....... ...nsS. ...ss.. ...s... .......
+house_20.chance = -5
+house_21 = ....... ....... ....... .Ssn... ..ss... ...s... .......
+house_22.chance = -5
+
 
 
 ### End of file
