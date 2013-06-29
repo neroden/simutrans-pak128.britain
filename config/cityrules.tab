@@ -81,12 +81,12 @@ ind_near_res = -8
 # . . . . . . .
 # . . . . . . .
 # . . . S . . .
-# . s s n H H .
+# . s s n H H H
 # . . . S . . .
 # . . . . . . .
 # . . . . . . .
 #
-road_1 = ....... ....... ...S... .ssnHH. ...S... ....... .......
+road_1 = ....... ....... ...S... .ssnHHH ...S... ....... .......
 road_1.chance = -4
 
 ## Extending past a diagonal
@@ -229,6 +229,20 @@ road_16.chance = -4
 road_17 = ....... ....... ....... .ssn... .hhH... ..hs... ...s...
 road_17.chance = -4
 
+### Straight Road with approaching terminus
+## Unlikely but should happen evenutally.
+## Otherwise we get "voids" in the city.
+##
+# . . . . . . .
+# . . . . . . .
+# . . . S . . .
+# . s s n H H h
+# . . . S . . .
+# . . . . . . .
+# . . . . . . .
+#
+road_18 = ....... ....... ...S... .ssnHHh ...S... ....... .......
+road_18.chance = 0
 
 
 #### H O U S E S ####
@@ -326,21 +340,20 @@ house_8.chance = -2
 house_9 = ....... ....... ..ShS.. ..SnS.. ..SsS.. ..sss.. .......
 house_9.chance = -2
 
-### House near an end
-###These will have really unpleasant orientations.
-###Reduce chance.
+### House at a corner on a pseudo-diagonal
+### This little oddity shows up when merging roads with diagonals
 ##
 # . . . . . . .
 # . . . . . . .
-# . . S S . . .
-# . . S n S . .
-# . S s h . . .
-# . s s s . . .
 # . . . . . . .
-house_10 = ....... ....... ..SS... ..SnS.. .Ssh... .sss... .......
-house_10.chance = 2
-house_11 = ....... ....... ...SS.. ..SnS.. ...hsS. ...sss. .......
-house_11.chance = 2
+# . . . n s S .
+# . . . s s . .
+# . . . s . . .
+# . . . . . . .
+house_10 = ....... ....... ....... ...nsS. ...ss.. ...s... .......
+house_10.chance = -2
+house_11 = ....... ....... ....... .Ssn... ..ss... ...s... .......
+house_11.chance = -2
 
 ## House near a stop (increase odds)
 ##
@@ -407,22 +420,6 @@ house_18 = ....... ....... ..t.... ...n... ...s... ....... .......
 house_18.chance = -2
 house_19 = ....... ....... ....t.. ...n... ...s... ....... .......
 house_19.chance = -2
-
-### House at a corner on a pseudo-diagonal
-### This little oddity shows up when merging roads with diagonals
-##
-# . . . . . . .
-# . . . . . . .
-# . . . . . . .
-# . . . n s S .
-# . . . s s . .
-# . . . s . . .
-# . . . . . . .
-house_20 = ....... ....... ....... ...nsS. ...ss.. ...s... .......
-house_20.chance = -5
-house_21 = ....... ....... ....... .Ssn... ..ss... ...s... .......
-house_22.chance = -5
-
 
 
 ### End of file
