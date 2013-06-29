@@ -232,16 +232,17 @@ road_17.chance = -4
 ### Straight Road with approaching terminus
 ## Unlikely but should happen evenutally.
 ## Otherwise we get "voids" in the city.
+## Exclude links to streets on this one or blocks get too small.
 ##
 # . . . . . . .
 # . . . . . . .
 # . . . S . . .
-# . s s n H H h
+# . s s n n n h
 # . . . S . . .
 # . . . . . . .
 # . . . . . . .
 #
-road_18 = ....... ....... ...S... .ssnHHh ...S... ....... .......
+road_18 = ....... ....... ...S... .ssnnnh ...S... ....... .......
 road_18.chance = 0
 
 
